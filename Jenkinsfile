@@ -30,13 +30,9 @@ pipeline {
     post {
         success {
             echo "Success! The pipeline has completed successfully."
-            sh '''
-	    if curl http://localhost:8888; then
-	        echo "Curl succeeded"
-	    else
-    	    echo "Curl failed"
-	    fi
-	    '''
+            retry(3) {
+           	 sh 'curl http://localhost:8888'
+            }
 
             // You can add further actions or notifications on success here
         }
