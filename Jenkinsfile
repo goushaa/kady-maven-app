@@ -31,7 +31,7 @@ pipeline {
         success {
             echo "Success! The pipeline has completed successfully."
             sh '''
-	    if curl http://example.com; then
+	    if curl http://localhost:8888; then
 	        echo "Curl succeeded"
 	    else
     	    echo "Curl failed"
