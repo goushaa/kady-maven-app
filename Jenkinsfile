@@ -30,7 +30,7 @@ pipeline {
     post {
         success {
             echo "Success! The pipeline has completed successfully."
-            sh 'docker exec -it java-lab-application curl http://localhost:8080'
+            sh 'curl http://localhost:8888'
             // You can add further actions or notifications on success here
         }
         failure {
