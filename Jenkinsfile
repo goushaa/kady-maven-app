@@ -30,7 +30,7 @@ pipeline {
     post {
         success {
             echo "Success! The pipeline has completed successfully."
-            sh 'curl http://localhost:8888'
+            sh 'curl -m 10 http://localhost:8888'
             // You can add further actions or notifications on success here
         }
         failure {
